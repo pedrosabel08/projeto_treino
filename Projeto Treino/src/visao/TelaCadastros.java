@@ -75,9 +75,7 @@ public class TelaCadastros extends JFrame {
 	public void setUsuarioSelecionado(Usuario usuario) {
 		this.usuarioSelecionado = usuario;
 		this.txtIdUsuario.setText(String.valueOf(usuario.getId()));
-		this.txtNomeUsuario.setText(usuario.getNomeUsuario());
-		this.txtIDUsuario.setText(String.valueOf(usuario.getId()));
-	
+		this.txtNomeUsuario.setText(usuario.getNomeUsuario());	
 	}
 	public void setTreinoSelecionado(Treino treino) {
 		this.treinoSelecionado = treino;
