@@ -18,7 +18,7 @@ public class TreinoBD {
 	ArrayList<Treino> lista = new ArrayList<>();
 	
 	public ArrayList <Treino> pesquisarTreino(){
-		String sql = "select * from Cliente";
+		String sql = "select * from tb_treinos";
 
 		conn = new Conexao().faz_conexao();
 
@@ -38,7 +38,7 @@ public class TreinoBD {
 
 			}
 		} catch (SQLException e) {
-			JOptionPane.showMessageDialog(null,"Erro no Banco de Dados ao pesquisar o Cliente -> " + e);
+			JOptionPane.showMessageDialog(null,"Erro no Banco de Dados ao pesquisar o Treino -> " + e);
 		}
 		return lista;
 	}
@@ -58,7 +58,7 @@ public class TreinoBD {
 			stmt.execute();
 			stmt.close();
 			
-			JOptionPane.showMessageDialog(null, "Cliente inserido com sucesso!");
+			JOptionPane.showMessageDialog(null, "Treino inserido com sucesso!");
 			
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Preencha os campos para cadastrar!");
