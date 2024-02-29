@@ -38,7 +38,6 @@ public class TelaCadastros extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField txtIdUsuario;
 	private JTextField txtNomeUsuario;
 
 	private Usuario usuarioSelecionado;
@@ -51,7 +50,7 @@ public class TelaCadastros extends JFrame {
 	private JLabel lblHora;
 	private JTextField txtRep;
 	private JTextField txtIDTreino;
-	private JTextField txtIDUsuario;
+	private JTextField txtIdUsuario;
 
 	/**
 	 * Launch the application.
@@ -78,13 +77,12 @@ public class TelaCadastros extends JFrame {
 		this.txtIdUsuario.setText(String.valueOf(usuario.getId()));
 		this.txtNomeUsuario.setText(usuario.getNomeUsuario());
 		this.txtIDUsuario.setText(String.valueOf(usuario.getId()));
-		
+	
 	}
 	public void setTreinoSelecionado(Treino treino) {
 		this.treinoSelecionado = treino;
 		this.txtIDTreino.setText(String.valueOf(treino.getId()));
 		this.txtNomeTreino.setText(treino.getNomeTreino());
-		this.txtIdUsuario.setText(String.valueOf(treino.getIdUsuario()));
 
 	}
 	public void setExercicioSelecionado(Exercicio exercicio) {
@@ -113,7 +111,7 @@ public class TelaCadastros extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Cadastro de Treinos");
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 25));
-		lblNewLabel.setBounds(10, 11, 240, 52);
+		lblNewLabel.setBounds(50, 10, 240, 52);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("ID Aluno:");
@@ -215,7 +213,7 @@ public class TelaCadastros extends JFrame {
 		JButton btnCadastrarTreino = new JButton("Cadastrar Treino");
 		btnCadastrarTreino.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String idUsuario = txtIDUsuario.getText();
+				String idUsuario = txtIdUsuario.getText();
 				String nomeTreino = txtNomeTreino.getText();
 				DateTimeFormatter dtf5 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 				String date =(dtf5.format(LocalDateTime.now()));
@@ -229,15 +227,17 @@ public class TelaCadastros extends JFrame {
 				TreinoBD treinoBD = new TreinoBD();
 				treinoBD.cadastrarTreino(treino);
 				
+
 				JOptionPane.showMessageDialog(null, "Treino Cadastrado!");
-				
-				txtIDUsuario.setText("");
+
+				txtIdUsuario.setText("");
+
 				txtNomeTreino.setText("");
 				txtNomeUsuario.setText("");
 				
 			}
 		});
-		btnCadastrarTreino.setFont(new Font("Arial", Font.PLAIN, 20));
+		btnCadastrarTreino.setFont(new Font("Arial", Font.PLAIN, 18));
 		btnCadastrarTreino.setBounds(716, 189, 205, 50);
 		contentPane.add(btnCadastrarTreino);
 		
@@ -271,9 +271,7 @@ public class TelaCadastros extends JFrame {
 				ExercicioBD exBD = new ExercicioBD();
 				exBD.cadastrarExercicio(exercicio);
 				
-				JOptionPane.showMessageDialog(null, "Exercicio Cadastrado!");
-				
-				txtIDUsuario.setText("");
+				txtIdUsuario.setText("");
 				txtNomeTreino.setText("");
 				txtNomeUsuario.setText("");
 				txtNomeExercicio.setText("");
@@ -283,7 +281,8 @@ public class TelaCadastros extends JFrame {
 				txtIDTreino.setText("");
 			}
 		});
-		btnCadastrarExercicio.setFont(new Font("Arial", Font.PLAIN, 20));
+		btnCadastrarExercicio.setFont(new Font("Arial", Font.PLAIN, 18));
+
 		btnCadastrarExercicio.setBounds(716, 293, 205, 50);
 		contentPane.add(btnCadastrarExercicio);
 		
@@ -298,12 +297,12 @@ public class TelaCadastros extends JFrame {
 		txtIDTreino.setBounds(334, 246, 86, 25);
 		contentPane.add(txtIDTreino);
 		
-		txtIDUsuario = new JTextField();
-		txtIDUsuario.setFont(new Font("Arial", Font.PLAIN, 15));
-		txtIDUsuario.setEditable(false);
-		txtIDUsuario.setColumns(10);
-		txtIDUsuario.setBounds(10, 234, 86, 25);
-		contentPane.add(txtIDUsuario);
+		txtIdUsuario = new JTextField();
+		txtIdUsuario.setFont(new Font("Arial", Font.PLAIN, 15));
+		txtIdUsuario.setEditable(false);
+		txtIdUsuario.setColumns(10);
+		txtIdUsuario.setBounds(10, 234, 86, 25);
+		contentPane.add(txtIdUsuario);
 		
 		JButton btnTreinos = new JButton("Treinos");
 		btnTreinos.addActionListener(new ActionListener() {
