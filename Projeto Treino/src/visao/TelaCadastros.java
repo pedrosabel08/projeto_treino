@@ -116,12 +116,6 @@ public class TelaCadastros extends JFrame {
 		lblNewLabel_1.setBounds(10, 184, 101, 31);
 		contentPane.add(lblNewLabel_1);
 		
-		txtIdUsuario = new JTextField();
-		txtIdUsuario.setEditable(false);
-		txtIdUsuario.setBounds(10, 226, 86, 20);
-		contentPane.add(txtIdUsuario);
-		txtIdUsuario.setColumns(10);
-		
 
 		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 15));
 		lblNewLabel_1.setBounds(10, 184, 101, 31);
